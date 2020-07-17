@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorblanco"
+    tools:context=".MainActivity">
+
+
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/BtnNavigationBottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@color/colorPrimary"
+        app:itemIconTint="@color/colorWhiteApp"
+        app:itemTextColor="@color/colorWhiteApp"
+        app:menu="@menu/menu2"
+        >
+
+    </android.support.design.widget.BottomNavigationView>
+
+
+
+
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include
+            layout="@layout/toolbar"
+            android:id="@+id/toolbar">
+
+        </include>
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:gravity="center"
+            android:text="LOGIN"
+            android:textColor="@color/colorblanco"
+            android:textSize="26sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/edtCodigo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:gravity="center"
+                        android:hint="Ingrese el codigo"
+                        android:inputType="textPersonName"
+                        android:paddingBottom="10dp"
+                        android:textSize="19sp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/btnBuscar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="BUSCAR"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <EditText
+                    android:id="@+id/edtProducto"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:hint="Ingrese el producto"
+                    android:inputType="textPersonName"
+                    android:paddingBottom="10dp"
+                    android:textSize="19sp"
+                    android:textStyle="bold" />
+
+
+                <EditText
+                    android:id="@+id/edtPrecio"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:hint="Ingrese el precio"
+                    android:inputType="textPersonName"
+                    android:paddingBottom="10dp"
+                    android:textSize="19sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/edtFabricante"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:hint="Ingrese el fabricante"
+                    android:inputType="textPersonName"
+                    android:textSize="19sp"
+                    android:textStyle="bold" />
+
+                <FrameLayout
+                    android:id="@+id/container"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="55dp"
+                    android:layout_marginBottom="60dp"></FrameLayout>
+
+                <Button
+                    android:id="@+id/btnAgregar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="25dp"
+                    android:text="AGREGAR"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/btnEditar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="EDITAR"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/btnEliminar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="ELIMINAR"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+
+
+    </LinearLayout>
+
+
+</android.support.design.widget.CoordinatorLayout>
