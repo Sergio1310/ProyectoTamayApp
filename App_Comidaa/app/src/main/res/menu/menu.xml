@@ -2,12 +2,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <item
-        android:id="@+id/sesion"
-        android:icon="@drawable/ic_sesion"
-        android:title="Sesion"
-        app:showAsAction="ifRoom"
-        />
+
     <item
         android:id="@+id/carrito"
         android:icon="@drawable/ic_carrito"
@@ -15,18 +10,20 @@
         app:showAsAction="ifRoom"
         />
 
-    <item
-        android:id="@+id/new_menu"
-        android:icon="@drawable/ic_menu"
-        android:title="Menu"
-        app:showAsAction="ifRoom"
-        />
+
 
 
     <item
         android:id="@+id/pedidos"
         android:icon="@drawable/ic_pedidos"
         android:title="pedidos"
+        app:showAsAction="ifRoom"
+        />
+
+    <item
+        android:id="@+id/sesion"
+        android:icon="@drawable/ic_sesion"
+        android:title="Sesion"
         app:showAsAction="ifRoom"
         />
 

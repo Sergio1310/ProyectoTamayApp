@@ -5,13 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     app:titleTextColor="@color/colorWhiteApp"
-    android:background="@color/colorPrimary"
+    android:background="@color/colorpedidos"
     android:theme="@style/AppThemeCustonToolbar"
     app:popupTheme="@style/AppThemeCustonMenuToolbar">
 
     <TextView
         android:id="@+id/toolbar_tittle"
-        android:text="MENU "
+        android:text="MIS PEDIDOS"
         android:textColor="@android:color/white"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>

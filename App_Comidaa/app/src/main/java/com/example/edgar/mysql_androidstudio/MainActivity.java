@@ -1,5 +1,6 @@
 package com.example.edgar.mysql_androidstudio;
 
+import android.content.Intent;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -37,6 +38,7 @@ import java.util.Map;
 
 import fragments.BebidasFragment;
 import fragments.ComidasFragment;
+import fragments.postres;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -65,6 +67,9 @@ public class MainActivity extends AppCompatActivity {
                 }
                 if(menuItem.getItemId() == R.id.bebida){
                     showSelectedFragment(new BebidasFragment());
+                }
+                if(menuItem.getItemId() == R.id.postres){
+                    showSelectedFragment(new postres());
                 }
 
                 return true;
@@ -239,16 +244,21 @@ public class MainActivity extends AppCompatActivity {
                 showSelectedFragment(new ComidasFragment());
                 break;
             case R.id.sesion:
-                Log.d("TAG1", "sesion");
+                Intent welcome = new Intent(MainActivity.this, login.class);
+                startActivity(welcome);
                 break;
             case R.id.carrito:
                 Log.d("TAG1", "Carrito");
+
+                Intent welcome1 = new Intent(MainActivity.this, carrito.class);
+                startActivity(welcome1);
+
+
                 break;
-            case R.id.new_menu:
-                Log.d("TAG1", "Menu-botton");
-                break;
+
             case R.id.pedidos:
-                Log.d("TAG1", "pedidos-boton");
+                Intent welcome2 = new Intent(MainActivity.this, pedidos.class);
+                startActivity(welcome2);
                 break;
             default:
                 //Error

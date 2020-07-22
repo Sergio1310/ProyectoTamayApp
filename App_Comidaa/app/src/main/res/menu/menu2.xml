@@ -13,5 +13,11 @@
         android:title="bebida"
 
         />
+    <item
+        android:id="@+id/postres"
+        android:icon="@drawable/ic_postre"
+        android:title="bebida"
+
+        />
 
 </menu>
