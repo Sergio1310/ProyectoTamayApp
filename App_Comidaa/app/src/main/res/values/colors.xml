@@ -9,6 +9,8 @@
     <color name="colorgris1">#B3BAC3</color>
     <color name="colorazul">#5373A0</color>
     <color name="colorlogo">#FFB06E</color>
+    <color name="colorcarrito">#FF637D</color>
+    <color name="colorpedidos">#BD9576</color>
 
     <color name="colorWhiteApp">#FFFFFF</color>
 </resources>

@@ -43,6 +43,14 @@ public class login extends AppCompatActivity {
             }
         });
 
+        btnRegistro.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent welcome = new Intent(login.this, registro.class);
+                startActivity(welcome);
+            }
+        });
+
     }
 
     private void buscarUsuario(String URL){
