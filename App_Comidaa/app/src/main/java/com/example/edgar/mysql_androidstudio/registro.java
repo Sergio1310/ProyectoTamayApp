@@ -25,7 +25,7 @@ import java.util.TimeZone;
 
 public class registro extends AppCompatActivity {
 
-    EditText edtid,edtnombre,edtdireccion,edtTelefono, edtusuario, edtcontrasena, edttipo;
+    EditText edtnombre,edtdireccion,edtTelefono, edtusuario, edtcontrasena, edttipo;
     Button btnregistrar, btningreso2;
     String id;
 
@@ -36,7 +36,7 @@ public class registro extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro);
 
-        edtid=(EditText)findViewById(R.id.et_id);
+
         edtnombre=(EditText)findViewById(R.id.et_nombre);
         edtdireccion=(EditText)findViewById(R.id.et_direccion);
         edtTelefono=(EditText)findViewById(R.id.et_telefono);
@@ -46,8 +46,7 @@ public class registro extends AppCompatActivity {
         btnregistrar=(Button) findViewById(R.id.btn_registro);
         btningreso2=(Button) findViewById(R.id.btn_ingresa2);
 
-        Random();
-        edtid.setText(id);
+
 
 
         btnregistrar.setOnClickListener(new View.OnClickListener() {
@@ -81,7 +80,9 @@ public class registro extends AppCompatActivity {
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String,String> parametros=new HashMap<String, String>();
-                parametros.put("id",edtid.getText().toString());
+                Random();
+
+                parametros.put("id",id);
                 parametros.put("nombre",edtnombre.getText().toString());
                 parametros.put("direccion",edtdireccion.getText().toString());
                 parametros.put("telefono",edtTelefono.getText().toString());
@@ -96,7 +97,7 @@ public class registro extends AppCompatActivity {
         requestQueue.add(stringRequest);
     }
     private void limpiarFormulario(){
-        edtid.setText("");
+
         edtnombre.setText("");
         edtdireccion.setText("");
         edtTelefono.setText("");
@@ -109,9 +110,9 @@ public class registro extends AppCompatActivity {
         Calendar calendar = Calendar.getInstance();
         Date date = calendar.getTime();
         SimpleDateFormat sdf,sdf2;
-        sdf = new SimpleDateFormat("yyyyMMdd");
+
         sdf2 = new SimpleDateFormat("HHmmss");
         sdf2.setTimeZone(TimeZone.getDefault().getTimeZone("HHmmss"));
-        id = sdf2.format(date) + sdf.format(date);
+        id = sdf2.format(date) ;
     }
 }

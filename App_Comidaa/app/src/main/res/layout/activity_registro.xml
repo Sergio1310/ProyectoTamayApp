@@ -30,35 +30,18 @@
         android:layout_marginTop="0dp"
         android:layout_marginRight="40dp"
         android:background="@drawable/registro" />
-                <EditText
-                    android:id="@+id/et_id"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/imageView"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentLeft="true"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginLeft="40dp"
-                    android:layout_marginTop="00dp"
-                    android:layout_marginRight="40dp"
-                    android:backgroundTint="@color/colorLogin"
-                    android:drawableLeft="@drawable/ic_nombre"
-                    android:ems="10"
-                    android:hint=" ID 1 ó 2"
-                    android:inputType="textEmailAddress"
-                    android:textColor="@color/colorWhiteApp"
-                    android:textColorHint="@android:color/background_light" />
+
 
     <EditText
         android:id="@+id/et_nombre"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/et_id"
+        android:layout_below="@+id/imageView"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_centerHorizontal="true"
         android:layout_marginLeft="40dp"
-        android:layout_marginTop="0dp"
+        android:layout_marginTop="10dp"
         android:layout_marginRight="40dp"
         android:backgroundTint="@color/colorLogin"
         android:drawableLeft="@drawable/ic_nombre"
@@ -155,7 +138,7 @@
                     android:drawableLeft="@drawable/ic_usu"
                     android:ems="10"
                     android:hint=" Tipo: 1-admin ó 2-cliente "
-
+                    android:inputType="number"
                     android:textColor="@android:color/background_light"
                     android:textColorHint="@android:color/background_light" />
                 <Button
