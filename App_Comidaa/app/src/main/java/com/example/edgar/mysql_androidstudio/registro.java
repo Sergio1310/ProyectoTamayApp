@@ -1,5 +1,6 @@
 package com.example.edgar.mysql_androidstudio;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -15,13 +16,18 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.TimeZone;
 
 public class registro extends AppCompatActivity {
 
     EditText edtid,edtnombre,edtdireccion,edtTelefono, edtusuario, edtcontrasena, edttipo;
-    Button btnregistrar;
+    Button btnregistrar, btningreso2;
+    String id;
 
     RequestQueue requestQueue;
 
@@ -38,6 +44,11 @@ public class registro extends AppCompatActivity {
         edtcontrasena=(EditText)findViewById(R.id.et_password);
         edttipo=(EditText)findViewById(R.id.et_tipo);
         btnregistrar=(Button) findViewById(R.id.btn_registro);
+        btningreso2=(Button) findViewById(R.id.btn_ingresa2);
+
+        Random();
+        edtid.setText(id);
+
 
         btnregistrar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -46,12 +57,20 @@ public class registro extends AppCompatActivity {
             }
         });
 
+        btningreso2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent welcome = new Intent(registro.this, login.class);
+                startActivity(welcome);
+            }
+        });
     }
     private void ejecutarServicio(String URL){
         StringRequest stringRequest=new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-                Toast.makeText(getApplicationContext(), "OPERACION EXITOSA", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "REGISTRO EXITOSO", Toast.LENGTH_SHORT).show();
+                limpiarFormulario();
             }
         }, new Response.ErrorListener() {
             @Override
@@ -75,5 +94,24 @@ public class registro extends AppCompatActivity {
         };
         requestQueue= Volley.newRequestQueue(this);
         requestQueue.add(stringRequest);
+    }
+    private void limpiarFormulario(){
+        edtid.setText("");
+        edtnombre.setText("");
+        edtdireccion.setText("");
+        edtTelefono.setText("");
+        edtusuario.setText("");
+        edtcontrasena.setText("");
+        edttipo.setText("");
+    }
+    private void Random(){
+
+        Calendar calendar = Calendar.getInstance();
+        Date date = calendar.getTime();
+        SimpleDateFormat sdf,sdf2;
+        sdf = new SimpleDateFormat("yyyyMMdd");
+        sdf2 = new SimpleDateFormat("HHmmss");
+        sdf2.setTimeZone(TimeZone.getDefault().getTimeZone("HHmmss"));
+        id = sdf2.format(date) + sdf.format(date);
     }
 }
