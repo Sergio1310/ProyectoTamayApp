@@ -30,11 +30,14 @@
 
             <ImageView
                 android:id="@+id/imagen_view"
-                android:layout_width="200dp"
-                android:layout_height="150dp"
+                android:layout_width="180dp"
+                android:layout_height="190dp"
 
-                android:src="@mipmap/ic_launcher"
-                />
+                android:src="@mipmap/ic_logo" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/colorPrimary">
             <TextView
                 android:id="@+id/text_view_contenido"
                 android:layout_width="wrap_content"
@@ -42,8 +45,9 @@
                 android:text="COMIDA:"
                 android:layout_gravity="center"
                 android:textColor="@android:color/black"
-                android:textSize="20sp" />
-
+                android:textSize="20sp"
+                />
+            </LinearLayout>
 
 
         </LinearLayout>
@@ -54,10 +58,13 @@
 
             <ImageView
                 android:id="@+id/imagen_view2"
-                android:layout_width="200dp"
-                android:layout_height="150dp"
-                android:src="@mipmap/ic_launcher"
-                />
+                android:layout_width="180dp"
+                android:layout_height="190dp"
+                android:src="@mipmap/ic_launcher2" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/colorPrimary">
             <TextView
                 android:id="@+id/text_view_contenido2"
                 android:layout_width="wrap_content"
@@ -65,8 +72,10 @@
                 android:layout_gravity="center"
                 android:text="COMIDA:"
 
+
                 android:textColor="@android:color/black"
                 android:textSize="20sp" />
+            </LinearLayout>
 
 
         </LinearLayout>
