@@ -7,6 +7,29 @@
     android:layout_height="match_parent"
     tools:context=".carrito">
 
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/BtnNavigationBottom"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@color/colorcarrito"
+        app:itemIconTint="@color/colorWhiteApp"
+        app:itemTextColor="@color/colorWhiteApp"
+        app:menu="@menu/confirmar"
+        >
+
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="$total$"
+            android:layout_marginLeft="250dp"
+            android:textSize="25dp"
+            android:textColor="@color/colorWhiteApp"/>
+    </android.support.design.widget.BottomNavigationView>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
