@@ -5,83 +5,83 @@
     tools:context="fragments.ComidasFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:text="COMIDAS DISPONIBLES"
-    android:gravity="center"/>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal"
-        android:layout_gravity="center"
-        android:layout_marginLeft="0dp"
-        android:layout_marginTop="0dp"
-        android:layout_marginRight="0dp">
+
+
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
-
+            android:padding="10dp">
             <ImageView
-                android:id="@+id/imagen_view"
-                android:layout_width="180dp"
-                android:layout_height="190dp"
+                android:id="@+id/id_imagen"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@mipmap/ic_logo"></ImageView>
 
-                android:src="@mipmap/ic_logo" />
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@color/colorPrimary">
-            <TextView
-                android:id="@+id/text_view_contenido"
-                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="COMIDA:"
-                android:layout_gravity="center"
-                android:textColor="@android:color/black"
-                android:textSize="20sp"
-                />
+                android:orientation="vertical"
+                android:layout_marginLeft="5dp"
+                android:layout_marginStart="5dp">
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TableRow>
+                        <TextView
+                            android:text="Comida: "
+                            android:textSize="20sp"
+                            android:textColor="#000"
+                            android:textStyle="bold"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+                        <TextView
+                            android:id="@+id/txtComida"
+                            android:text="Nombre Here"
+                            android:textSize="20sp"
+                            android:textColor="#000"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+                    </TableRow>
+                    <TableRow>
+                        <TextView
+                            android:text="Precio: "
+                            android:textSize="20sp"
+                            android:textColor="#000"
+                            android:textStyle="bold"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+                        <TextView
+                            android:id="@+id/txtprecio"
+                            android:text="Precio aqui"
+                            android:textSize="20sp"
+                            android:textColor="#000"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+                    </TableRow>
+                    <TableRow>
+                        <Button
+                            android:id="@+id/buttonOrdenar"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="ORDENAR" />
+
+
+                    </TableRow>
+                </TableLayout>
             </LinearLayout>
 
 
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <ImageView
-                android:id="@+id/imagen_view2"
-                android:layout_width="180dp"
-                android:layout_height="190dp"
-                android:src="@mipmap/ic_launcher2" />
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@color/colorPrimary">
-            <TextView
-                android:id="@+id/text_view_contenido2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="COMIDA:"
-
-
-                android:textColor="@android:color/black"
-                android:textSize="20sp" />
-            </LinearLayout>
 
 
         </LinearLayout>
 
 
-    </LinearLayout>
-    </LinearLayout>
+
+
+
+
+
 
 </FrameLayout>
