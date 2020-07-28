@@ -39,7 +39,7 @@ public class login extends AppCompatActivity {
         btnIngresar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                buscarUsuario("http://192.168.1.180:8080/appcomida/buscar_producto.php?usuario="+mUsu.getText()+"");
+                buscarUsuario("http://toxicosrest.000webhostapp.com/login.php?usuario="+mUsu.getText()+"");
             }
         });
 
@@ -90,7 +90,7 @@ public class login extends AppCompatActivity {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(getApplicationContext(),"Usuario o contraseña invalida",Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(),"invalida",Toast.LENGTH_SHORT).show();
             }
         }
         );

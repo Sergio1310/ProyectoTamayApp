@@ -3,6 +3,8 @@ package com.example.edgar.mysql_androidstudio;
 import android.content.Intent;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
+import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
@@ -15,11 +17,14 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
+import fragments.BebidasFragment;
 import fragments.ComidasFragment;
+import fragments.postres;
 
 public class carrito extends AppCompatActivity {
 
     private Toolbar toolbar;
+    BottomNavigationView mBottomNavigation;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +34,22 @@ public class carrito extends AppCompatActivity {
         setUpToolbar();
         setUpHomeUpIconAndColor(R.drawable.ic_los_toxicos4, R.color.colorWhiteApp);
         customTitleToolbar();
+
+        //Botton navigation de abajo
+
+        mBottomNavigation =(BottomNavigationView)findViewById(R.id.BtnNavigationBottom) ;
+        mBottomNavigation.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+                if(menuItem.getItemId() == R.id.confirmar){
+                    Intent welcome = new Intent(carrito.this, pedidos.class);
+                    startActivity(welcome);
+                }
+
+
+                return true;
+            }
+        });
 
 
     }
@@ -118,4 +139,5 @@ public class carrito extends AppCompatActivity {
 
 
     }
+
 }

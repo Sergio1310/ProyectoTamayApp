@@ -5,10 +5,19 @@
     tools:context="fragments.ComidasFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerView11"
         android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:text="COMIDAS DISPONIBLES"
-    android:gravity="center"/>
+        android:layout_height="match_parent"
+        android:background="@android:color/darker_gray"/>
+
+
+
+
+
+
+
+
 
 </FrameLayout>
