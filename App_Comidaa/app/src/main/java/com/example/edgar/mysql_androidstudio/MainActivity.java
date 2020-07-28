@@ -74,8 +74,6 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             }
         });
-
-
 //Toolbar -->
         setUpToolbar();
         setUpHomeUpIconAndColor(R.drawable.ic_los_toxicos4, R.color.colorWhiteApp);
@@ -85,9 +83,6 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
-
-
-
 
     // TOOLBAR---->
     private void setUpToolbar(){
