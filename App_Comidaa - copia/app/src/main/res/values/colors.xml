@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#45B5AA</color>
+    <color name="colorPrimaryDark">#ffffff</color>
+    <color name="colorblanco">#EDF2F4</color>
+    <color name="colorAccent">#8D99AE</color>
+    <color name="colorGris">#2b2d42</color>
+    <color name="colorLogin">#7BC4BE</color>
+    <color name="colorgris1">#B3BAC3</color>
+    <color name="colorazul">#5373A0</color>
+    <color name="colorlogo">#FFB06E</color>
+    <color name="colorcarrito">#FF637D</color>
+    <color name="colorpedidos">#BD9576</color>
+
+    <color name="colorWhiteApp">#FFFFFF</color>
+</resources>
