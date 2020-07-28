@@ -51,19 +51,22 @@ public class MainActivity extends AppCompatActivity {
                     try {
 
                         jsonObject = response.getJSONObject(i);
-                        usuario = jsonObject.getString("usuario");
-                        contrasena = jsonObject.getString("contrasena");
+                        usuario= jsonObject.getString("usuario");
+                        contrasena= jsonObject.getString("contrasena");
                         id_tipousuario = jsonObject.getInt("id_tipo_usuario");
 
-                        if(usuario.toString().equals(mUsu.getText().toString()) && contrasena.toString().equals(mPas.getText().toString()) && id_tipousuario == 1)
+                        if(usuario.equals(mUsu.getText().toString())&& contrasena.equals(mPas.getText().toString()) && id_tipousuario == 1)
                         {
-                            Toast.makeText(MainActivity.this, "Bienvenido: " + usuario + ".", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(MainActivity.this, "Bienvenido " + usuario + "te estaba esperando.", Toast.LENGTH_SHORT).show();
                             Intent welcome = new Intent(MainActivity.this, Vista_Admin.class);
                             startActivity(welcome);
 
                             break;
                         }
-                        Toast.makeText(MainActivity.this, "Usuario o Contraseña Invalida.", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(MainActivity.this, "Usuario o Contraseña Incorrecta.", Toast.LENGTH_SHORT).show();
+
+
+
                     } catch (JSONException e) {
                         Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
                     }
@@ -72,11 +75,13 @@ public class MainActivity extends AppCompatActivity {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(getApplicationContext(),"" + error,Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(),"Usuario o Contraseña Incorrecta.",Toast.LENGTH_SHORT).show();
             }
         }
         );
         requestQueue= Volley.newRequestQueue(this);
         requestQueue.add(jsonArrayRequest);
+
+
     }
 }
