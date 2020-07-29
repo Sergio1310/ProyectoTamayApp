@@ -82,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
         Bundle extras = getIntent().getExtras();
         String idcliente1= extras.getString("IDCliente");
 
-      idclienteapp.idcliapp=idcliente1;
+        idclienteapp.idcliapp=idcliente1;
 
 
 

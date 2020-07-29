@@ -1,6 +1,8 @@
 package com.example.edgar.mysql_androidstudio;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -21,6 +23,7 @@ import org.json.JSONObject;
 public class login extends AppCompatActivity {
     EditText mUsu, mPas;
     String usuario,contrasena,idUsuario;
+    int id_tipousuario;
     Button btnIngresar, btnRegistro;
 
     RequestQueue requestQueue;
@@ -29,6 +32,9 @@ public class login extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        SharedPreferences prefs = getSharedPreferences("MisPreferencias", Context.MODE_PRIVATE);
+        String id_usuario = prefs.getString("id_usuario", "0");
 
         mUsu=(EditText)findViewById(R.id.et_email);
         mPas=(EditText)findViewById(R.id.et_password);
@@ -65,6 +71,7 @@ public class login extends AppCompatActivity {
                         usuario= jsonObject.getString("usuario");
                         contrasena= jsonObject.getString("contrasena");
                         idUsuario=jsonObject.getString("id");
+                        id_tipousuario = jsonObject.getInt("id_tipo_usuario");
                         String U=idUsuario;
 
                         /*mUsu.setText(usuario);
@@ -73,14 +80,18 @@ public class login extends AppCompatActivity {
                         mPas.setText(jsonObject.getString("contrasena"));*/
 
 
-                        if(usuario.toString().equals(mUsu.getText().toString())&& contrasena.toString().equals(mPas.getText().toString()))
+                        if(usuario.equals(mUsu.getText().toString())&& contrasena.equals(mPas.getText().toString()) && id_tipousuario == 2)
                         {
+
                             Toast.makeText(login.this, "Bienvenido ID: "+ U, Toast.LENGTH_SHORT).show();
 
+                            SharedPreferences prefs = getSharedPreferences("MisPreferencias", Context.MODE_PRIVATE);
 
+                            SharedPreferences.Editor editor = prefs.edit();
+                            editor.putString("id_usuario", U);
+                            editor.commit();
 
                             Intent welcome = new Intent(login.this, MainActivity.class);
-                           welcome.putExtra("IDCliente",U);
                             startActivity(welcome);
 
 
