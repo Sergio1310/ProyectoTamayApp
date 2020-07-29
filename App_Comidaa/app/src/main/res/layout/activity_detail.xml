@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DetailActivity"
+    android:orientation="vertical"
+    android:padding="5dp">
+
+    <ImageView
+        android:id="@+id/imagen_view_detail"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:src="@mipmap/ic_launcher"/>
+    <TextView
+        android:id="@+id/nombrecomida_detail"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="nombre"
+        android:textSize="40sp"
+        android:textColor="@android:color/black"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"/>
+    <TextView
+        android:id="@+id/descripcionComidaDetail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Descripcion"
+        android:textSize="30sp"
+        android:textColor="@android:color/black"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"/>
+    <TextView
+        android:id="@+id/precioComidaDetail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Precio"
+        android:textSize="30sp"
+        android:textColor="@android:color/black"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"/>
+    <TextView
+        android:id="@+id/ordenComidaDetail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="numOrden"
+        android:layout_marginTop="20dp"
+        android:textSize="20sp"
+        android:textColor="@android:color/black"
+
+        />
+    <EditText
+        android:id="@+id/txtCantidad"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Ingresa Cantidad"
+        android:layout_marginTop="10dp"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/btnCancelar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cancelar"
+        android:textSize="18sp"
+        android:layout_weight="1"/>
+        <Button
+            android:id="@+id/btnAceptar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Aceptar"
+            android:textSize="18sp"
+            android:layout_weight="1"/>
+
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

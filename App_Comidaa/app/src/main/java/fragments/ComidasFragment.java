@@ -1,7 +1,9 @@
 package fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -15,9 +17,11 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.edgar.mysql_androidstudio.DetailActivity;
 import com.example.edgar.mysql_androidstudio.ExampleAdapter;
 import com.example.edgar.mysql_androidstudio.R;
 import com.example.edgar.mysql_androidstudio.comidas;
+;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -30,7 +34,13 @@ import java.util.zip.Inflater;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class ComidasFragment extends Fragment {
+public class ComidasFragment extends Fragment implements ExampleAdapter.OnItemClickListener {
+
+    public static final String EXTRA_URL = "imagen";
+    public static final String EXTRA_ID = "id";
+    public static final String EXTRA_NOMBRE = "nombre";
+    public static final String EXTRA_DESCRIPCION = "descripcion";
+    public static final String EXTRA_PRECIO = "precio";
 
     /*private RecyclerView mRecyclerView;
     private ExampleAdapter mExampleAdapter;
@@ -42,6 +52,7 @@ public class ComidasFragment extends Fragment {
     ExampleAdapter exampleAdapter;
     RecyclerView mRecyclerView;
     RequestQueue mRequestQueue;
+
 
 
     public ComidasFragment() {
@@ -86,11 +97,14 @@ public class ComidasFragment extends Fragment {
                                         comidas.getString("nombre"),
                                         comidas.getString("descripcion"),
                                         comidas.getInt("precio"),
-                                        comidas.getString("imagen")
-                                ));
+                                        comidas.getString("imagen"),
+                                        comidas.getString("id")
+                                                                ));
                             }
+
                             exampleAdapter = new ExampleAdapter(getContext(), comidasList);
                             mRecyclerView.setAdapter(exampleAdapter);
+                            exampleAdapter.setOnItemClickListener(ComidasFragment.this);
 
                         } catch (JSONException e) {
                             e.printStackTrace();
@@ -104,6 +118,22 @@ public class ComidasFragment extends Fragment {
                     }
                 });
                 Volley.newRequestQueue(getContext()).add(stringRequest);
+
+
+    }
+
+    @Override
+    public void onItemClick(int position) {
+        Intent popup =new Intent(getContext(),DetailActivity.class);
+        comidas clickedItem = comidasList.get(position);
+        popup.putExtra(EXTRA_URL, clickedItem.getImagen());
+        popup.putExtra(EXTRA_ID, clickedItem.getIndicadorID());
+        popup.putExtra(EXTRA_NOMBRE, clickedItem.getNombre());
+        popup.putExtra(EXTRA_DESCRIPCION, clickedItem.getDescripcion());
+        popup.putExtra(EXTRA_PRECIO, clickedItem.getPrecio());
+
+        startActivity(popup);
+
 
 
     }

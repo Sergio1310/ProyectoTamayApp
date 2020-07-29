@@ -7,6 +7,8 @@
     <string name="postres">postre</string>
     <string name="bebidas">bebida</string>
     <string name="precio">precio</string>
+    <string name="indica">indicaID</string>
     <string name="descripcion">descripción</string>
+    <string name="com_select">comida Seleccionada</string>
 
 </resources>

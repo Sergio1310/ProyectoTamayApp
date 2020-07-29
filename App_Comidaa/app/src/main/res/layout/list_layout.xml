@@ -55,13 +55,7 @@
                         android:layout_height="wrap_content"/>
                 </TableRow>
                 <TableRow>
-                    <TextView
-                        android:text="            "
-                        android:textSize="20sp"
-                        android:textColor="#000"
-                        android:textStyle="bold"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
+
                     <TextView
                         android:id="@+id/txtprecio"
                         android:text="@string/precio"
@@ -71,12 +65,14 @@
                         android:layout_height="wrap_content"/>
                 </TableRow>
                 <TableRow>
-                    <Button
-                        android:id="@+id/buttonOrdenar"
+                    <TextView
+                        android:id="@+id/txtindicadorID"
+                        android:visibility="invisible"
+                        android:text="@string/indica"
+                        android:textSize="20sp"
+                        android:textColor="#000"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:text="ORDENAR" />
+                        android:layout_height="wrap_content"/>
 
 
                 </TableRow>

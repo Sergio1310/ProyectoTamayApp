@@ -19,10 +19,20 @@ public class ExampleAdapter extends RecyclerView.Adapter<ExampleAdapter.ExampleV
 
     private Context mContext;
     private ArrayList<comidas>mExampleList;
+    private OnItemClickListener mListener;
+
+
+
+    public interface OnItemClickListener{
+        void onItemClick(int position);
+    }
+    public void setOnItemClickListener(OnItemClickListener listener){
+        mListener=listener;
+    }
 
     public ExampleAdapter(Context context, ArrayList<comidas>exampleList){
-        this.mContext=context;
-        this.mExampleList=exampleList;
+        mContext=context;
+        mExampleList=exampleList;
     }
 
     @NonNull
@@ -41,10 +51,12 @@ public class ExampleAdapter extends RecyclerView.Adapter<ExampleAdapter.ExampleV
         String nombreC=currentItem.getNombre();
         String descripcionC=currentItem.getDescripcion();
         int precioC=currentItem.getPrecio();
+        String indicadorIDC=currentItem.getIndicadorID();
 
         holder.mTextViewnombre.setText(nombreC);
         holder.mTextViewDescripcion.setText(descripcionC);
         holder.mTextViewPrecio.setText("$ "+precioC);
+        holder.mTextViewIndicadorID.setText(indicadorIDC);
         Picasso.with(mContext).load(imagenUrl).fit().centerInside().into(holder.mImagenView);
 
        /* comidas currentItem = mExampleList.get(position);
@@ -71,6 +83,7 @@ public class ExampleAdapter extends RecyclerView.Adapter<ExampleAdapter.ExampleV
         public TextView mTextViewnombre;
         public TextView mTextViewDescripcion;
         public TextView mTextViewPrecio;
+        public TextView mTextViewIndicadorID;
 
 
         public ExampleViewHolder(View itemView) {
@@ -79,6 +92,19 @@ public class ExampleAdapter extends RecyclerView.Adapter<ExampleAdapter.ExampleV
             mTextViewnombre=itemView.findViewById(R.id.txtnombre);
             mTextViewDescripcion=itemView.findViewById(R.id.txtdescripcion);
             mTextViewPrecio=itemView.findViewById(R.id.txtprecio);
+            mTextViewIndicadorID=itemView.findViewById(R.id.txtindicadorID);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if(mListener != null){
+                        int position =getAdapterPosition();
+                        if(position != RecyclerView.NO_POSITION){
+                            mListener.onItemClick(position);
+                        }
+                    }
+                }
+            });
         }
     }
 }

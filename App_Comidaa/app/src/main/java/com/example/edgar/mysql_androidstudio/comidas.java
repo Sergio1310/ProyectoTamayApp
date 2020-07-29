@@ -6,14 +6,15 @@ public class comidas {
     private String descripcion;
     private int precio;
     private String imagen;
+    private String indicadorID;
 
-    public comidas(String nombre, String descripcion, int precio, String imagen) {
+    public comidas(String nombre, String descripcion, int precio, String imagen, String indicadorID) {
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.precio = precio;
         this.imagen = imagen;
+        this.indicadorID = indicadorID;
     }
-
 
     public String getNombre() {
         return nombre;
@@ -30,6 +31,16 @@ public class comidas {
     public String getImagen() {
         return imagen;
     }
+
+    public String getIndicadorID() {
+        return indicadorID;
+    }
+
+
+
+
+
+
 
 
 
