@@ -2,6 +2,12 @@ package com.example.edgar.mysql_androidstudio;
 
 public class comidas {
 
+
+
+
+
+    private String idclienteapp;
+
     private String nombre;
     private String descripcion;
     private int precio;
