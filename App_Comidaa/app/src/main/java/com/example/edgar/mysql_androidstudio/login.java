@@ -20,7 +20,7 @@ import org.json.JSONObject;
 
 public class login extends AppCompatActivity {
     EditText mUsu, mPas;
-    String usuario,contrasena;
+    String usuario,contrasena,idUsuario;
     Button btnIngresar, btnRegistro;
 
     RequestQueue requestQueue;
@@ -64,21 +64,32 @@ public class login extends AppCompatActivity {
                         jsonObject = response.getJSONObject(i);
                         usuario= jsonObject.getString("usuario");
                         contrasena= jsonObject.getString("contrasena");
+                        idUsuario=jsonObject.getString("id");
+                        String U=idUsuario;
 
                         /*mUsu.setText(usuario);
                         mPas.setText(contrasena);
                         mUsu.setText(jsonObject.getString("usuario"));
                         mPas.setText(jsonObject.getString("contrasena"));*/
 
+
                         if(usuario.toString().equals(mUsu.getText().toString())&& contrasena.toString().equals(mPas.getText().toString()))
                         {
-                            Toast.makeText(login.this, "Bienvenidos ", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(login.this, "Bienvenido ID: "+ U, Toast.LENGTH_SHORT).show();
+
+
+
                             Intent welcome = new Intent(login.this, MainActivity.class);
+                           welcome.putExtra("IDCliente",U);
                             startActivity(welcome);
+
+
 
                             break;
                         }
                         Toast.makeText(login.this, "Usuario o contraseña invalida", Toast.LENGTH_SHORT).show();
+
+
 
 
 

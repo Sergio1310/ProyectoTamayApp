@@ -23,6 +23,7 @@ public class DetailActivity extends AppCompatActivity {
     EditText txtcantidadselct;
     Button cancel, acept;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,10 +63,20 @@ public class DetailActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Toast.makeText(DetailActivity.this, "ID producto: " + id, Toast.LENGTH_SHORT).show();
+                String idcli=idclienteapp.idcliapp;
+
+
+
+                Toast.makeText(DetailActivity.this, "ID producto " + id+ " ID usuario: "+idcli, Toast.LENGTH_SHORT).show();
 
             }
         });
+
+
+
+
+    }
+    private void recibirDatos(){
 
 
     }
